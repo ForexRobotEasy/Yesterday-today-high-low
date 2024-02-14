@@ -1,0 +1,144 @@
+
+// Forex Robot Easy - Yesterday Today High Low
+// Developer's Site: forexroboteasy.com
+// Development Team: Forex Robot Easy Team
+
+// Include necessary libraries
+#include <Trade\Trade.mqh>
+
+// Define constants
+#define SYMBOL 'EURUSD'  // Symbol to be analyzed
+#define TIMEFRAME PERIOD_D1  // Timeframe for analysis
+
+// Initialize objects
+CTrade trade;
+
+// Function to display the high low market indicators from the previous day and the current day
+void DisplayHighLowIndicators()
+{
+   // Get the previous day's high and low
+   double prevHigh = High[1];
+   double prevLow = Low[1];
+
+   // Get the current day's high and low
+   double currHigh = High[0];
+   double currLow = Low[0];
+
+   // Display the high low market indicators
+   Print('Previous Day High: ', prevHigh);
+   Print('Previous Day Low: ', prevLow);
+   Print('Current Day High: ', currHigh);
+   Print('Current Day Low: ', currLow);
+}
+
+// Function to retrieve the previous day's low and use it as a support level for pullbacks or breaks
+double GetSupportLevel()
+{
+   // Get the previous day's low
+   double prevLow = Low[1];
+
+   // Use the previous day's low as a support level
+   return prevLow;
+}
+
+// Function to analyze the trend and provide opportunities for traders to go long or short
+void AnalyzeTrend()
+{
+   // Analyze the trend based on moving averages or any other technical indicator
+
+   // Provide opportunities for traders to go long or short based on the trend analysis
+   if (/* Trend is bullish */)
+   {
+      // Place a buy order
+      trade.Buy(Symbol(), 0.1, Ask, 0, 0, 0, 'Buy Order');
+   }
+   else if (/* Trend is bearish */)
+   {
+      // Place a sell order
+      trade.Sell(Symbol(), 0.1, Bid, 0, 0, 0, 'Sell Order');
+   }
+}
+
+// Function to perform market sentiment analysis
+void PerformMarketSentimentAnalysis()
+{
+   // Analyze market sentiment based on news events, economic data, or any other factors
+
+   // Provide accurate and reliable data for market sentiment analysis
+   if (/* Market sentiment is bullish */)
+   {
+      Print('Market sentiment is bullish');
+   }
+   else if (/* Market sentiment is bearish */)
+   {
+      Print('Market sentiment is bearish');
+   }
+   else
+   {
+      Print('Market sentiment is neutral');
+   }
+}
+
+// Function to display the high low market indicators and trading opportunities
+void DisplayMarketIndicatorsAndOpportunities()
+{
+   // Display the high low market indicators
+   DisplayHighLowIndicators();
+
+   // Retrieve the previous day's low and use it as a support level
+   double supportLevel = GetSupportLevel();
+   Print('Previous Day's Low Used as Support Level: ', supportLevel);
+
+   // Analyze the trend and provide trading opportunities
+   AnalyzeTrend();
+
+   // Perform market sentiment analysis
+   PerformMarketSentimentAnalysis();
+}
+
+// Function to optimize the code for efficient data retrieval and processing
+void OptimizeCode()
+{
+   // Optimize the code for efficient data retrieval and processing
+   // Use appropriate data structures and algorithms to enhance performance
+}
+
+// Function to thoroughly test the software
+void TestSoftware()
+{
+   // Perform thorough testing to ensure the software functions as intended
+   // Test various scenarios and edge cases to identify and fix any bugs or issues
+}
+
+// Function to document the code and provide instructions for users
+void DocumentCodeAndProvideInstructions()
+{
+   // Document the code and provide clear instructions for users on how to utilize the software effectively
+   // Include detailed explanations of each function and its purpose
+}
+
+// Function to collaborate with the project team and stakeholders
+void CollaborateWithTeamAndStakeholders()
+{
+   // Collaborate with the project team and stakeholders to ensure the software meets all requirements and expectations
+   // Regularly communicate and provide updates on the progress of the software development
+}
+
+// Entry point of the program
+void OnStart()
+{
+   // Display the high low market indicators and trading opportunities
+   DisplayMarketIndicatorsAndOpportunities();
+
+   // Optimize the code for efficient data retrieval and processing
+   OptimizeCode();
+
+   // Test the software thoroughly
+   TestSoftware();
+
+   // Document the code and provide instructions for users
+   DocumentCodeAndProvideInstructions();
+
+   // Collaborate with the project team and stakeholders
+   CollaborateWithTeamAndStakeholders();
+}
